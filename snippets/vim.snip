@@ -1,41 +1,41 @@
 snippet header
 abbr " Filename: ... Author ... License ... Last Change ...
-  " =============================================================================
-  " Filename: `substitute(expand('%:p'), '.*/.vim/[^/]\+/[^/]\+/', '', '')`
-  " Author: `system('git config user.name | tr -d ''\n''')`
-  " License: MIT License
-  " Last Change: 2015/01/09 00:34:49.
-  " =============================================================================
+	" =============================================================================
+	" Filename: `substitute(expand('%:p'), '.*/.vim/[^/]\+/[^/]\+/', '', '')`
+	" Author: `system('git config user.name | tr -d ''\n''')`
+	" License: MIT License
+	" Last Change: 2015/03/09 16:31:52.
+	" =============================================================================
 
-  let s:save_cpo = &cpo
-  set cpo&vim
+	let s:save_cpo = &cpo
+	set cpo&vim
 
-  ${0}
+	${0}
 
-  let &cpo = s:save_cpo
-  unlet s:save_cpo
+	let &cpo = s:save_cpo
+	unlet s:save_cpo
 
 snippet loaded
 abbr if exists('g:loaded_ ...') || v:version < 700
-  if exists('g:loaded_`substitute(matchstr(expand('%:p'), '.*/.vim/[^/]\+/\zs[^/]\+\ze'), '-', '_', 'g')`') || v:version < 700
-    finish
-  endif
-  let g:loaded_`substitute(matchstr(expand('%:p'), '.*/.vim/[^/]\+/\zs[^/]\+\ze'), '-', '_', 'g')` = 1
+	if exists('g:loaded_`substitute(matchstr(expand('%:p'), '.*/.vim/[^/]\+/\zs[^/]\+\ze'), '-', '_', 'g')`') || v:version < 700
+		finish
+	endif
+	let g:loaded_`substitute(matchstr(expand('%:p'), '.*/.vim/[^/]\+/\zs[^/]\+\ze'), '-', '_', 'g')` = 1
 
-delete      function func
-snippet     function
-abbr        func endfunc
-alias       func
-options     head
-  function! ${1:#:func_name}(${2}) abort
-    ${0:TARGET}
-  endfunction
+delete function func
+snippet function
+abbr func endfunc
+alias func
+options head
+	function! ${1:#:func_name}(${2}) abort
+		${0:TARGET}
+	endfunction
 
-delete      autoload afunction afunc
-snippet     function_autoload
-abbr        autoload func endfunc
-alias       afunction afunc
-options     head
-  function! `substitute(matchstr(expand('%:p:r'), '/autoload/\zs.*$'), '/', '#', 'g')`#${1:#:func_name}(${2:#:args}) abort
-    ${0}
-  endfunction
+delete autoload afunction afunc
+snippet function_autoload
+abbr autoload func endfunc
+alias afunction afunc
+options head
+	function! `substitute(matchstr(expand('%:p:r'), '/autoload/\zs.*$'), '/', '#', 'g')`#${1:#:func_name}(${2:#:args}) abort
+		${0}
+	endfunction
