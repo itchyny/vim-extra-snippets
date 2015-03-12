@@ -108,6 +108,13 @@ abbr yesno :: Bool -> String
 	yesno True = "YES"
 	yesno _ = "NO"
 
+snippet output
+abbr output :: Bool -> String
+	${0}
+	output :: Bool -> String
+	output True = "${1}"
+	output _ = "${2}"
+
 snippet splitN
 abbr splitN :: Int -> [a] -> [[a]]
 	${0}
