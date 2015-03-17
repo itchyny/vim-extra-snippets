@@ -42,7 +42,7 @@ abbr codeforces, atcoder
 	main = getContents >>= print . solve . map read . words . (!!1) . lines
 
 	solve :: [Int] ->
-	solve as = ${0}
+	solve ${1:as} = ${0}
 
 snippet mainLineInts
 abbr codeforces, atcoder
