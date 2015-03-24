@@ -34,6 +34,18 @@ abbr codeforces, atcoder
 	solve [[${0}
 	solve _ = undefined
 
+snippet mainContentsNoLinesInts
+abbr codeforces, atcoder
+	import Data.Char
+	import Data.List
+
+	main :: IO ()
+	main = getContents >>= print . solve . map read . words
+
+	solve :: [Int] ->
+	solve (${0}
+	solve _ = undefined
+
 snippet mainContentsEachInts
 abbr codeforces, atcoder
 	import Data.Char
