@@ -152,7 +152,7 @@ snippet toTuple
 abbr toTuple :: [t] -> (t, t)
 	${0}
 	toTuple :: [a] -> (a, a)
-	toTuple xs = (xs !! 0, xs !! 1)
+	toTuple xs = (head xs, xs !! 1)
 
 snippet distance
 abbr distance :: (a, a) -> (a, a) -> a
