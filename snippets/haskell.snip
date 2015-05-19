@@ -1,9 +1,5 @@
 snippet mainEuler
 abbr euler
-	import Data.Char
-	import Data.List
-	import Data.Numbers.Primes
-
 	main :: IO ()
 	main = print $ euler${1} ${2}
 
@@ -12,9 +8,6 @@ abbr euler
 
 snippet mainContents
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = getContents >>= print . solve . lines
 
@@ -24,9 +17,6 @@ abbr codeforces, atcoder
 
 snippet mainContentsInts
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = getContents >>= print . solve . map (map read . words) . lines
 
@@ -36,9 +26,6 @@ abbr codeforces, atcoder
 
 snippet mainContentsNoLinesInts
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = getContents >>= print . solve . map read . words
 
@@ -48,9 +35,6 @@ abbr codeforces, atcoder
 
 snippet mainContentsEachInts
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = getContents >>= print . solve . map read . lines
 
@@ -60,9 +44,6 @@ abbr codeforces, atcoder
 
 snippet mainContentsIntsAtSecondLine
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = getContents >>= print . solve . map read . words . (!!1) . lines
 
@@ -71,9 +52,6 @@ abbr codeforces, atcoder
 
 snippet mainLineInts
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = getLine >>= print . solve . map read . words
 
@@ -83,9 +61,6 @@ abbr codeforces, atcoder
 
 snippet mainLineString
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = getLine >>= print . solve
 
@@ -94,9 +69,6 @@ abbr codeforces, atcoder
 
 snippet mainLineRead
 abbr codeforces, atcoder
-	import Data.Char
-	import Data.List
-
 	main :: IO ()
 	main = readLn >>= print . solve
 
