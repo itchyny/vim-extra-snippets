@@ -9,7 +9,7 @@ abbr euler
 snippet mainContents
 abbr codeforces, atcoder
 	main :: IO ()
-	main = getContents >>= print . solve . lines
+	main = print . solve . lines =<< getContents
 
 	solve :: [String] ->
 	solve [${0}
@@ -18,7 +18,7 @@ abbr codeforces, atcoder
 snippet mainContentsInts
 abbr codeforces, atcoder
 	main :: IO ()
-	main = getContents >>= print . solve . map (map read . words) . lines
+	main = print . solve . map (map read . words) . lines =<< getContents
 
 	solve :: [[Int]] ->
 	solve [[${0}
@@ -27,7 +27,7 @@ abbr codeforces, atcoder
 snippet mainContentsNoLinesInts
 abbr codeforces, atcoder
 	main :: IO ()
-	main = getContents >>= print . solve . map read . words
+	main = print . solve . map read . words =<< getContents
 
 	solve :: [Int] ->
 	solve (${0}
@@ -36,19 +36,11 @@ abbr codeforces, atcoder
 snippet mainContentsEachInts
 abbr codeforces, atcoder
 	main :: IO ()
-	main = getContents >>= print . solve . map read . lines
+	main = print . solve . map read . lines =<< getContents
 
 	solve :: [Int] ->
 	solve ${0}
 	solve _ = undefined
-
-snippet mainContentsIntsAtSecondLine
-abbr codeforces, atcoder
-	main :: IO ()
-	main = getContents >>= print . solve . map read . words . (!!1) . lines
-
-	solve :: [Int] ->
-	solve ${1:as} = ${0}
 
 snippet mainLineInts
 abbr codeforces, atcoder
