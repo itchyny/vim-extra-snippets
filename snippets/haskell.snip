@@ -136,3 +136,9 @@ abbr factorial :: Integral a => a -> a
 	${0}
 	factorial :: Integral a => a -> a
 	factorial n = product [1..n]
+
+snippet same
+abbr same :: Eq a => [a] -> Bool
+	${0}
+	same :: Eq a => [a] -> Bool
+	same xs = all (==head xs) xs
