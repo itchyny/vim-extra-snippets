@@ -1,0 +1,9 @@
+snippet cpuprofile
+alias   pprof
+abbr    pprof.StartCPUProfile(f) ... defer pprof.StopCPUProfile()
+	f, err := os.Create("${0:/tmp/cpuprof}")
+	if err != nil {
+	    panic(err)
+	}
+	pprof.StartCPUProfile(f)
+	defer pprof.StopCPUProfile()
