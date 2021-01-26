@@ -6,3 +6,8 @@ abbr use strict, warnings, utf8
 
 	${0}
 
+snippet dumper
+abbr dump
+abbr use Data::Dumper; warn Dumper ...
+	use Data::Dumper; warn Dumper ${0};
+
