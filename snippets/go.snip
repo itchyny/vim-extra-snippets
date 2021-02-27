@@ -3,7 +3,22 @@ alias   pprof
 abbr    pprof.StartCPUProfile(f) ... defer pprof.StopCPUProfile()
 	f, err := os.Create("${0:/tmp/cpuprof}")
 	if err != nil {
-	    panic(err)
+		panic(err)
 	}
 	pprof.StartCPUProfile(f)
 	defer pprof.StopCPUProfile()
+
+snippet memprofile
+alias   pprof
+abbr    pprof.WriteHeapProfile(f)
+	defer func() {
+		f, err := os.Create("${0:/tmp/memprof}")
+		if err != nil {
+			panic(err)
+		}
+		defer f.Close()
+		runtime.GC()
+		if err = pprof.WriteHeapProfile(f); err != nil {
+			panic(err)
+		}
+	}()
