@@ -1,4 +1,48 @@
-snippet     pri
+snippet     use
+abbr        use
+    use ${0:TARGET};
+
+snippet     print
+alias       prin
+alias       pri
+alias       pr
 abbr        println!
     println!("${1:\{\}}", ${0:TARGET});
 
+snippet     format
+alias       forma
+alias       form
+alias       for
+abbr        format!
+    format!("${1:\{\}}", ${0:TARGET});
+
+snippet     panic
+alias       pani
+alias       pan
+abbr        panic!
+    panic!("${1:\{\}}", ${0:TARGET});
+
+snippet     assert_eq
+alias       assert
+alias       asser
+alias       asse
+alias       ass
+abbr        assert_eq!
+    assert_eq!(${1:LEFT}, ${2:RIGHT});
+
+snippet     debug
+alias       dbg
+abbr        dbg!
+    dbg!(${0:TARGET});
+
+snippet     ok
+abbr        Ok
+    Ok(${0:TARGET});
+
+snippet     err
+abbr        Err
+    Err(${0:TARGET});
+
+snippet     ret
+abbr        return
+    return ${0:TARGET};
